@@ -1,0 +1,12 @@
+FUNCTION EstPalindrome(ch: Chaîne de caractères) : Booléen
+VAR
+    set_declarations
+BEGIN
+    IF (len(ch) <= 1) THEN
+        RETURN true     // Une chaîne d'un caractère ou moins est toujours un palindrome
+    ELSE_IF (ch[1] = ch[Long(ch)]) THEN
+        RETURN EstPalindrome(SousChaîne(ch, 2, Long(ch) - 1))    // Appel récursif avec la sous-chaîne du milieu
+    ELSE
+         RETURN false ;  // Les caractères aux extrémités sont différents, ce n'est pas un palindrome
+    END_IF
+END
